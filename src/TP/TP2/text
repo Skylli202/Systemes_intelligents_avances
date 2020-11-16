@@ -1,0 +1,18 @@
+1) Conception
+    1 - Proposer une représentation des solutions (à quoi ressemblera un chromosome ?)
+        Les coordonnées x et y des capteurs sont des chromosomes.
+        Forme d'une solution :
+            sommes i allant de 0 à n capture : [ Xi | Yi]
+            Si n = 3 :
+            [ X1 | Y1 | X2 | Y2 | X3 | Y3 ]
+    2 - Définissez vos fonctions objectifs.
+        Maximiser la couverture des cibles
+           -> Nombre de cible autour d'un capteur
+        Maximiser la redondance
+            -> Nombre de capteur autour d'une cible
+
+        Réalisation pratique :
+            Calcule pour chaque cible, le nombre de capteur présent à une distance inférieur au rayon d'action d'un capteur.
+        Stockage dans un tableau
+            f1: nb de capteur couvert par au moins 1 capteur (nb de cellule du tableau != 0)
+            f2: valeur la plus basse contenu dans le tableau

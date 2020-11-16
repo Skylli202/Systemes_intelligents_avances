@@ -21,6 +21,7 @@
 
 package jmetal.metaheuristics.nsgaII;
 
+import TP.TP2.SensorDeployment;
 import jmetal.core.Algorithm;
 import jmetal.core.Operator;
 import jmetal.core.Problem;
@@ -98,10 +99,11 @@ public class NSGAII_main {
       //problem = new Kursawe("Real", 3);
       //problem = new Kursawe("BinaryReal", 3);
       //problem = new Water("Real");
-      problem = new ZDT3("ArrayReal", 30);
+      //problem = new ZDT3("ArrayReal", 30);
       //problem = new ConstrEx("Real");
       //problem = new DTLZ1("Real");
       //problem = new OKA2("Real") ;
+      problem = new SensorDeployment("", "", 3, 50, 100, 1000);
     } // else
     
     algorithm = new NSGAII(problem);
