@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public class readFile {
     public static void main(String[] args) {
-        String filePath = "targets.txt";
+        String filePath = "C:\\Users\\jmddu\\IdeaProjects\\Systemes_intelligents_avances\\src\\TP\\TP2\\targets.txt";
 
         Double[][] res = read(filePath);
 
@@ -19,25 +19,25 @@ public class readFile {
 
     public static Double[][] read (String filePath) {
         Double[][] res;
-        BufferedReader br;
+        ArrayList<String> lines = new ArrayList<>();
         int cpt = 0;
         try {
-            br = new BufferedReader(new FileReader(filePath));
-            ArrayList<String> lines = new ArrayList<String>().addAll(br.lines().toArray());
-            res = new Double[(int)lines.size()][2];
-            for( String line : lines){
+            BufferedReader br = new BufferedReader(new FileReader(filePath));
+            Object[] linesObj = br.lines().toArray();
+
+            for ( Object str : linesObj) {
+                lines.add((String) str);
+            }
+
+            res = new Double[lines.size()][2];
+
+            for( String line : lines) {
+                String[] local =  line.split(" ");
+                res[cpt][0] = Double.valueOf(local[0]);
+                res[cpt][1] = Double.valueOf(local[1]);
                 System.out.println("[ " + res[cpt][0] + " ; " + res[cpt][1] + " ]");
             }
 
-
-//            while (false) {
-//                String[] local =  tmp.split(" ");
-//                res[cpt][0] = Double.valueOf(local[0]);
-//                res[cpt][1] = Double.valueOf(local[1]);
-//                System.out.println("[ " + res[cpt][0] + " ; " + res[cpt][1] + " ]");
-//                cpt++;
-//                tmp = br.readLine();
-//            }
         } catch (IOException e) {
             res = new Double[0][0];
             e.printStackTrace();
