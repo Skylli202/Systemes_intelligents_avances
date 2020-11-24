@@ -8,7 +8,9 @@ import java.util.stream.Stream;
 
 public class readFile {
     public static void main(String[] args) {
-        String filePath = "C:\\Users\\jmddu\\IdeaProjects\\Systemes_intelligents_avances\\src\\TP\\TP2\\targets.txt";
+//        String filePath = "C:\\Users\\jmddu\\IdeaProjects\\Systemes_intelligents_avances\\src\\TP\\TP2\\targets.txt";
+        String filePath = "";
+
 
         Double[][] res = read(filePath);
 
