@@ -1,0 +1,12 @@
+# Scale font and line width (dpi) by changing the size! It will always display stretched.
+set terminal svg size 400,300 enhanced fname 'arial'  fsize 10 butt solid
+set output 'out.svg'
+
+# Key means label...
+set key outside
+set xlabel 'X'
+set ylabel 'Y'
+set title 'Fig 2 alike'
+set xrange[0:500]
+set yrange[0:500]
+plot "data.txt" using 1:2:3 title 'Sensors' with circles, "data.txt" using 4:5 title 'targets' with points

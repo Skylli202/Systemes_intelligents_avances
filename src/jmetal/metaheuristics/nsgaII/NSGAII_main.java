@@ -103,7 +103,7 @@ public class NSGAII_main {
       //problem = new ConstrEx("Real");
       //problem = new DTLZ1("Real");
       //problem = new OKA2("Real") ;
-      problem = new SensorDeployment("", "", 3, 50, 100, 1000);
+      problem = new SensorDeployment("Real", "", 28, 100, 500);
     } // else
     
     algorithm = new NSGAII(problem);
